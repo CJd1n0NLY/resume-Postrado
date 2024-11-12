@@ -63,9 +63,9 @@ $pdf->SetFont('Helvetica', '', 12);
 $pdf->SetXY(2,100);
 $pdf->MultiCell(0, 10, $objective);
 
-// SEPARATING LINE
+// SECTION LINE
 $pdf->SetFillColor($primaryColor[0], $primaryColor[1], $primaryColor[2]); 
-$pdf->Rect(80.5, 89.5, 1, 120, 'F');
+$pdf->Rect(80.5, 89.5, 1, 215, 'F');
 
 // SKILLS AND ATTITUDE
 $pdf->SetFillColor($primaryColor[0], $primaryColor[1], $primaryColor[2]); 
@@ -138,44 +138,103 @@ foreach ($expertise as $exp => $rating) {
     $y += 10;
 }
 
+// EXPERIENCE:
+$pdf->SetFillColor($primaryColor[0], $primaryColor[1], $primaryColor[2]); 
+$pdf->Rect(0, 208, $pdf->GetPageWidth()-80, 10, 'DF');
+$pdf->SetTextColor($secondaryColor[0], $secondaryColor[1], $secondaryColor[2]);
+$pdf->SetFont('Helvetica', 'B', 14);
+$pdf->SetXY(15,208);
+$pdf->Cell(0, 10, "EXPERIENCE:", 0, 1);
+
+$pdf->SetTextColor($primaryColor[0], $primaryColor[1], $primaryColor[2]);
+$pdf->SetXY(15,220);
+$pdf->SetFont('Helvetica', 'B', 12);
+$pdf->Cell(0, 5, " Busking Cosplayer ", 0, 1);
+$pdf->SetFont('Helvetica', 'I', 10);
+$pdf->SetXY(12,227);
+$pdf->Cell(0, 5, " December 2023 - March 2024", 0, 1);
+
+
+// ACHIEVEMENTS:
+$pdf->SetFillColor($primaryColor[0], $primaryColor[1], $primaryColor[2]); 
+$pdf->Rect(0, 235, $pdf->GetPageWidth()-130, 10, 'DF');
+$pdf->SetTextColor($secondaryColor[0], $secondaryColor[1], $secondaryColor[2]);
+$pdf->SetFont('Helvetica', 'B', 14);
+$pdf->SetXY(15,235);
+$pdf->Cell(0, 10, "ACHIEVEMENTS:", 0, 1);
+
+$pdf->SetTextColor($primaryColor[0], $primaryColor[1], $primaryColor[2]);
+$pdf->SetXY(0,252);
+$pdf->SetFont('Helvetica', 'B', 10);
+$pdf->Cell(0, 5, " Mabini Medical Clinic Appointment System ", 0, 1);
+$pdf->SetXY(25,257);
+$pdf->SetFont('Helvetica', 'I', 10);
+$pdf->Cell(0, 5, "2023", 0, 1);
+
+$pdf->SetXY(10,262);
+$pdf->SetFont('Helvetica', 'B', 10);
+$pdf->Cell(0, 5, " Hotel Management System ", 0, 1);
+$pdf->SetXY(25,267);
+$pdf->SetFont('Helvetica', 'I', 10);
+$pdf->Cell(0, 5, "2023", 0, 1);
+
+$pdf->SetXY(5,272);
+$pdf->SetFont('Helvetica', 'B', 10);
+$pdf->Cell(0, 5, " Dad's Waterpark Resort Booking System ", 0, 1);
+$pdf->SetXY(25,277);
+$pdf->SetFont('Helvetica', 'I', 10);
+$pdf->Cell(0, 5, "2022", 0, 1);
+
+
+
 // ACADEMIC BACKGROUND:
 
 $pdf->SetFillColor($primaryColor[0], $primaryColor[1], $primaryColor[2]); 
-$pdf->Rect(0, 210, $pdf->GetPageWidth(), 10, 'DF');
+$pdf->Rect(81, 208, $pdf->GetPageWidth()-80, 10, 'DF');
 $pdf->SetTextColor($secondaryColor[0], $secondaryColor[1], $secondaryColor[2]);
 $pdf->SetFont('Helvetica', 'B', 14);
-$pdf->SetY(210);
-$pdf->Cell(0, 10, "ACADEMIC BACKGROUND:", 0, 1, 'C');
+$pdf->SetXY(120,208);
+$pdf->Cell(0, 10, "ACADEMIC BACKGROUND:", 0, 1);
 
-$pdf->SetY(220);
+$pdf->SetXY(120,220);
 $pdf->SetTextColor($primaryColor[0], $primaryColor[1], $primaryColor[2]);
 $pdf->SetFont('Helvetica', 'B', 12);
-$pdf->Cell(0, 8, "Tertiary Level School:", 0, 1, 'C');
+$pdf->Cell(0, 8, "Tertiary Level School:", 0, 1);
 
+$pdf->SetXY(110,227);
 $pdf->SetFont('Helvetica', '', 12);
-$pdf->Cell(0, 5, " University of Caloocan City (BSIT)", 0, 1, 'C');
+$pdf->Cell(0, 5, " University of Caloocan City (BSIT)", 0, 1);
 $pdf->SetFont('Helvetica', 'I', 10);
-$pdf->Cell(0, 5, " 2022 - Present", 0, 1, 'C');
+$pdf->SetXY(130,232);
+$pdf->Cell(0, 5, " 2022 - Present", 0, 1);
 
+$pdf->SetXY(120,235);
 $pdf->SetFont('Helvetica', 'B', 12);
-$pdf->Cell(0, 8, "Secondary Level School:", 0, 1, 'C');
+$pdf->Cell(0, 8, "Secondary Level School:", 0, 1);
 
+$pdf->SetXY(110,242);
 $pdf->SetFont('Helvetica', '', 12);
-$pdf->Cell(0, 5, " AMA Computer College Caloocan (ICT) - Senior High School", 0, 1, 'C');
+$pdf->Cell(0, 5, " AMA Computer College Caloocan (ICT)", 0, 1);
 $pdf->SetFont('Helvetica', 'I', 10);
-$pdf->Cell(0, 5, " 2020 - 2022", 0, 1, 'C');
+$pdf->SetXY(130,247);
+$pdf->Cell(0, 5, " 2020 - 2022", 0, 1);
 
+$pdf->SetXY(110,252);
 $pdf->SetFont('Helvetica', '', 12);
-$pdf->Cell(0, 5, " Macario B. Asistio Sr. High School (Main) - Junior High School", 0, 1, 'C');
+$pdf->Cell(0, 5, " Macario B. Asistio Sr. High School (Main)", 0, 1);
+$pdf->SetXY(130,257);
 $pdf->SetFont('Helvetica', 'I', 10);
-$pdf->Cell(0, 5, " 2016 - 2020", 0, 1, 'C');
+$pdf->Cell(0, 5, " 2016 - 2020", 0, 1);
 
+$pdf->SetXY(120,260);
 $pdf->SetFont('Helvetica', 'B', 12);
-$pdf->Cell(0, 8, "Primary Level School:", 0, 1, 'C');
+$pdf->Cell(0, 8, "Primary Level School:", 0, 1);
 
+$pdf->SetXY(115,267);
 $pdf->SetFont('Helvetica', '', 12);
-$pdf->Cell(0, 5, " Imelda Elementary School ", 0, 1, 'C');
+$pdf->Cell(0, 5, " Imelda Elementary School ", 0, 1);
+$pdf->SetXY(130,272);
 $pdf->SetFont('Helvetica', 'I', 10);
-$pdf->Cell(0, 5, " 2011 - 2016", 0, 1, 'C');
+$pdf->Cell(0, 5, " 2011 - 2016", 0, 1);
 
 $pdf->Output();
